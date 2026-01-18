@@ -1,0 +1,134 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Page Background ===== */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1f2933, #111827);
+  color: #ffffff;
+}
+
+/* ===== Main Game Card ===== */
+.game {
+  background: #0f172a;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* ===== Headings ===== */
+h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #cbd5f5;
+  margin-bottom: 2rem;
+}
+
+/* ===== Buttons Layout ===== */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ===== Game Buttons ===== */
+.btn {
+  width: 140px;
+  height: 140px;
+  border-radius: 20%;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    inset 0 -6px 0 rgba(0, 0, 0, 0.25),
+    0 10px 25px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ===== Button Colors ===== */
+.red {
+  background: linear-gradient(145deg, #e66a8a, #c83b60);
+}
+
+.yellow {
+  background: linear-gradient(145deg, #fbbf6a, #f59e0b);
+}
+
+.green {
+  background: linear-gradient(145deg, #7dd3a8, #22c55e);
+}
+
+.purple {
+  background: linear-gradient(145deg, #a5b4fc, #6366f1);
+}
+
+/* ===== Press Effect ===== */
+.btn:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 -3px 0 rgba(0, 0, 0, 0.3),
+    0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Game Flash ===== */
+.flash {
+  filter: brightness(1.8);
+}
+
+/* ===== Mobile Friendly ===== */
+@media (max-width: 500px) {
+  .btn {
+    width: 110px;
+    height: 110px;
+    font-size: 1.5rem;
+  }
+
+  .game {
+    padding: 2rem;
+  }
+}
+/* ===== Game Over Effect ===== */
+.game-over {
+  background: linear-gradient(135deg, #7f1d1d, #450a0a) !important;
+}
+
+/* Subtle shake */
+.game-over .game {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
